@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>FlaskApp</title>
+  </head>
+  <body>
+    <h1>Hello!</h1>
+    <h2>Text is being read from the html file</h2>
+
+    <hr>
+    <h2>Using Jinja2 to write python code in html</h2>
+    {% for movie in movies %}
+    <ul>
+      <li>Movie is: {{ movie }}
+    </ul>
+    {% endfor %}
+  </body>
+</html>

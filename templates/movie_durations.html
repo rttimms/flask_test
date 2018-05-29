@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>FlaskApp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  </head>
+  <body>
+    <h1>Hello!</h1>
+    <h2>Text is being read from the html file</h2>
+    <h3>CSS file read from: {{ url_for('static', filename='css/styles.css') }}</h3>
+
+    <hr>
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Duration</th>
+        <th>Comment</th>
+      </tr>
+
+      <!-- iterate through the dict -->
+      {% for name, duration in movie_durations.items() %}
+      <tr>
+        <td>{{ name }}</td>
+        <td>{{ duration }}</td>
+
+        {% if duration < 2 %}
+        <td>Short</td>
+        {% elif duration >= 2 and duration <= 3 %}
+        <td>Short</td>
+        {% elif duration > 3 %}
+        <td>Long</td>
+        {% endif %}
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
